@@ -1,0 +1,34 @@
+<ui:composition template="../templates/master.xhtml"
+		xmlns="http://www.w3.org/1999/xhtml"
+		xmlns:f="http://java.sun.com/jsf/core"
+		xmlns:h="http://java.sun.com/jsf/html"
+		xmlns:ui="http://java.sun.com/jsf/facelets"
+		xmlns:p="http://xmlns.jcp.org/jsf/passthrough">
+	<ui:define name="content">
+		<h:form id="loginForm">
+			<h:messages style = "color:red;margin:8px;" /> 		
+			<div id="container">
+				<div class="field">
+					<h:inputText id="username" value="#{loginBean.nombreUsuario}" p:placeholder="Nombre de Usuario" required="true" requiredMessage="Ingrese Nombre de Usuario." />
+				</div>
+				<div class="field">
+					<h:inputSecret id="contrasena" value="#{loginBean.contrasena}" onkeyup="passwordValueChanged(this);" p:placeholder="Contraseña" required="true" requiredMessage="Ingrese Contraseña." />
+					<h:graphicImage id="show" library="images" name="show.jpg" onmouseover="changeCursor(this, 'pointer');" onmouseout="changeCursor(this, 'default');" onclick="managePasswordVisibility(true);" />
+					<h:graphicImage id="hide" library="images" name="hide.jpg" style="display:none;" onmouseover="changeCursor(this, 'pointer');" onmouseout="changeCursor(this, 'default');" onclick="managePasswordVisibility(false);" />
+				</div>
+				<h:commandButton id="loginbutton" value="Login" action="#{loginBean.login}" />
+			</div>
+
+			<div id="container">
+				<h:outputText value="For testing use:" style="line-height:16px;font-family:arial,sans-serif;color:#CCC;" />
+				<h:panelGrid columns="2" style="width: 272px;">
+					<h:outputText value="User:" styleClass="message-line" />
+					<h:outputText value="jcodepoint" styleClass="message-line" />
+					<h:outputText value="Password:" styleClass="message-line" />
+					<h:outputText value="clave" styleClass="message-line" />
+				</h:panelGrid>
+			</div>
+			
+		</h:form>
+	</ui:define>		
+</ui:composition>
