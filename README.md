@@ -1,5 +1,5 @@
-# jsf-login-example
-Basic authentication example using JavaServer Faces
+## Artículo en JCodePoint
+* [JSF autenticacion](https://jcodepoint.com/jsf/jsf-autenticacion/)
 
 Build with Maven.
 Tested on WildFly.
